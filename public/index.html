@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Tracker WebApp</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Money Tracker WebApp</h1>
+        <!-- Form Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Add New Record</h4>
+            </div>
+            <div class="card-body">
+                <form action="/add" method="post">
+                    
+                    <div class="form-group">
+                        <label for="category_select">Category:</label>
+                        <select class="form-control" name="category_select" id="category_select">
+                            <option value="Expense">Expense</option>
+                            <option value="Income">Income</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount_input">Amount:</label>
+                        <input type="number" class="form-control" id="amount_input" name="amount_input" placeholder="00000">
+                    </div>
+                    <div class="form-group">
+                        <label for="info">Info:</label>
+                        <input type="text" class="form-control" id="info" name="info" placeholder="info...">
+                    </div>
+                    <div class="form-group">
+                        <label for="date_input">Date:</label>
+                        <input type="date" class="form-control" id="date_input" name="date_input">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" id="add_btn">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Expenses and Income List</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Info</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-table-body">
+                        <!-- Table rows will be added here dynamically -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total:</strong></td>
+                            <td id="total-amount"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
